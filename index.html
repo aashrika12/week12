@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Static Web App</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+      color: #1f2937;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #2563eb;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: #1e40af;
+      padding: 12px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px #00000012;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #15803d;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>My Static Web App</h1>
+    <p>Simple, responsive, and fast</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <section class="card" id="home">
+      <h2>Welcome!</h2>
+      <p>
+        This is a static web application built with HTML,
+        CSS, and JavaScript in one file.
+      </p>
+
+      <button id="clickButton">Click Me</button>
+      <div id="message" aria-live="polite"></div>
+    </section>
+
+    <section class="card" id="about" style="margin-top: 25px;">
+      <h2>About</h2>
+      <p>
+        This application works directly in your browser.
+        No server, database, or framework is required.
+      </p>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <p>&copy; <span id="year"></span> My Static Web App</p>
+  </footer>
+
+  <script>
+    const button = document.getElementById("clickButton");
+    const message = document.getElementById("message");
+
+    button.addEventListener("click", () => {
+      message.textContent = "Hello! Your web app is working.";
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
